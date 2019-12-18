@@ -1,0 +1,18 @@
+import re
+pattern=r'(ab)cd(?P<pig>ef)'
+regex=re.compile(pattern)
+obj=regex.search('abcdefgh123',0,9) # match 对象
+
+#属性变量
+	print(obj.pos)# 目标字符串开始位置
+	print(obj.endpos) # 目标字符串结束位置
+	print(obj.lastgroup) # 最后一组名称
+	print(obj.lastindex)# 最后一组序号
+	print('----------------------------------------------------------')
+# 属性方法
+	print(obj.span())# 匹配内容的岂止位置
+	print(obj.start()) # 匹配内容的开始位置
+	print(obj.end()) ## 匹配内容的结束位置
+	print(obj.groupdict()) #获取捕获组字典,组名为键,对应内容为值
+	print(obj.groups())#获取子组对应内容
+	print(obj.group('pig'))# 获取match对象对应内容
